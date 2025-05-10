@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciCalc Pro | Advanced Online Scientific Calculator</title>
+    <meta name="description" content="Free online scientific calculator with advanced functions including trigonometry, logarithms, exponents, and memory features. Perfect for students and professionals.">
+    <meta name="keywords" content="scientific calculator, online calculator, math calculator, trigonometry calculator, logarithm calculator, free calculator">
+    <meta name="author" content="SciCalc Pro Team">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.1234calculator.com//">
+    <meta property="og:title" content="SciCalc Pro | Advanced Scientific Calculator">
+    <meta property="og:description" content="Free online scientific calculator with advanced functions including trigonometry, logarithms, exponents, and memory features.">
+    <meta property="og:image" content="https://www.1234calculator.com/images/calculator-preview.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.1234calculator.com/">
+    <meta name="twitter:title" content="SciCalc Pro | Advanced Scientific Calculator">
+    <meta name="twitter:description" content="Free online scientific calculator with advanced functions including trigonometry, logarithms, exponents, and memory features.">
+    <meta name="twitter:image" content="https://www.1234calculator.com/images/calculator-preview.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://scicalcpro.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main content styles */
+        .main-content {
+            padding: 4rem 0;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .page-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .content-section ul,
+        .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Calculator page specific styles */
+        .calculator-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .calculator-wrapper {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .calculator {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .display {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 32px;
+            min-height: 60px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            color: #333;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 8px;
+        }
+
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 12px 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 40px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+            transform: scale(0.98);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .number {
+            background-color: #666;
+            color: white;
+        }
+
+        .operator {
+            background-color: #ff9500;
+            color: white;
+        }
+
+        .function {
+            background-color: #505050;
+            color: white;
+            font-size: 14px;
+        }
+
+        .equals {
+            background-color: #ff9500;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .clear {
+            background-color: #a5a5a5;
+        }
+
+        .memory {
+            background-color: #505050;
+            color: white;
+            font-size: 14px;
+        }
+
+        .small-text {
+            font-size: 12px;
+        }
+
+        .shifted {
+            background-color: #404040;
+        }
+
+        .secondary-fn {
+            display: none;
+        }
+
+        .shift-mode .secondary-fn {
+            display: block;
+        }
+
+        .shift-mode .primary-fn {
+            display: none;
+        }
+
+        /* Features section */
+        .features {
+            padding: 4rem 0;
+            background-color: #f1f5f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Contact form styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Sitemap styles */
+        .sitemap-list {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+
+        .sitemap-list ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sitemap-list a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .sitemap-list a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            color: var(--light-color);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sitemap-list {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="https://www.1234calculator.com/index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    SciCalc Pro
+                </a>
+                <ul class="nav-links">
+                    <li><a href="https://www.1234calculator.com/index.html">Home</a></li>
+                    <li><a href="https://www.1234calculator.com/about.html">About Us</a></li>
+                    <li><a href="https://www.1234calculator.com/calculator.html">Calculator</a></li>
+                    <li><a href="https://www.1234calculator.com/contact.html">Contact Us</a></li>
+                    <li><a href="https://www.1234calculator.com/sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area - this will change for each page -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <div id="home-page" style="display: block;">
+            <section class="hero">
+                <div class="container">
+                    <h1>Advanced Scientific Calculator</h1>
+                    <p>Powerful online scientific calculator with all the functions you need for complex calculations, available right in your browser.</p>
+                    <div class="calculator-container">
+                        <div class="calculator-wrapper">
+                            <div class="calculator">
+                                <div class="display" id="display">0</div>
+                                <div class="buttons">
+                                    <!-- Calculator buttons -->
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sin(&#39;)">sin</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sinh(&#39;)">sinh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.cos(&#39;)">cos</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cosh(&#39;)">cosh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.tan(&#39;)">tan</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.tanh(&#39;)">tanh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log(&#39;)">ln</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.log2(&#39;)">log₂</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log10(&#39;)">log</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;1/&#39;)">1/x</button>
+
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.asin(&#39;)">sin⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.asinh(&#39;)">asinh</button>
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.acos(&#39;)">cos⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.acosh(&#39;)">acosh</button>
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.atan(&#39;)">tan⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.atanh(&#39;)">atanh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sqrt(&#39;)">√</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cbrt(&#39;)">∛</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.pow(&#39;)">x^y</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.pow(10,&#39;)">10^x</button>
+
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.PI&#39;)">π</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.random()&#39;)">rand</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.E&#39;)">e</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.exp(&#39;)">e^x</button>
+                                    <button class="function" onclick="addToDisplay(&#39;(&#39;)">(</button>
+                                    <button class="function" onclick="addToDisplay(&#39;)&#39;)">)</button>
+                                    <button class="clear" onclick="clearDisplay()">C</button>
+                                    <button class="function shifted" onclick="toggleShift()">2nd</button>
+                                    <button class="function" onclick="backspace()">⌫</button>
+
+                                    <button class="memory" onclick="memoryRecall()">MR</button>
+                                    <button class="memory" onclick="memoryClear()">MC</button>
+                                    <button class="memory" onclick="memoryAdd()">M+</button>
+                                    <button class="memory" onclick="memorySubtract()">M-</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;%&#39;)">%</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;factorial(&#39;)">n!</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;degreesToRadians(&#39;)">deg→rad</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;**2&#39;)">x²</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;**3&#39;)">x³</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;7&#39;)">7</button>
+                                    <button class="number" onclick="addToDisplay(&#39;8&#39;)">8</button>
+                                    <button class="number" onclick="addToDisplay(&#39;9&#39;)">9</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;/&#39;)">/</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.abs(&#39;)">abs</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.floor(&#39;)">floor</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;4&#39;)">4</button>
+                                    <button class="number" onclick="addToDisplay(&#39;5&#39;)">5</button>
+                                    <button class="number" onclick="addToDisplay(&#39;6&#39;)">6</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;*&#39;)">×</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.ceil(&#39;)">ceil</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.round(&#39;)">round</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;1&#39;)">1</button>
+                                    <button class="number" onclick="addToDisplay(&#39;2&#39;)">2</button>
+                                    <button class="number" onclick="addToDisplay(&#39;3&#39;)">3</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;-&#39;)">-</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;**&#39;)">^</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sign(&#39;)">sign</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;0&#39;)">0</button>
+                                    <button class="number" onclick="addToDisplay(&#39;.&#39;)">.</button>
+                                    <button class="equals" onclick="calculate()">=</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;+&#39;)">+</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.trunc(&#39;)">trunc</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;radiansToDegrees(&#39;)">rad→deg</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Key Features</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <h3>Advanced Math Functions</h3>
+                            <p>Includes trigonometric, logarithmic, exponential, and statistical functions for complex calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <h3>Memory Functions</h3>
+                            <p>Store and recall values with memory functions (MR, MC, M+, M-) for multi-step calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>Unit Conversions</h3>
+                            <p>Convert between degrees and radians with a single click for trigonometry calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>Secondary Functions</h3>
+                            <p>Access additional functions using the 2nd key, doubling the available operations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Responsive Design</h3>
+                            <p>Works perfectly on all devices from desktop computers to mobile phones.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Instant Results</h3>
+                            <p>Get accurate results instantly with our powerful calculation engine.</p>
+                        </div>
+						
+					</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Page -->
+        <div id="about-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>About Us</h1>
+                </div>
+
+                <div class="content-section">
+                    <h2>Our Story</h2>
+                    <p>SciCalc Pro was founded in 2023 by a team of mathematicians and software engineers who recognized the need for a powerful yet accessible scientific calculator available to everyone online. Our mission is to provide students, professionals, and enthusiasts with a comprehensive calculation tool that's both feature-rich and easy to use.</p>
+
+                    <h2>Our Team</h2>
+                    <p>We're a diverse group of professionals with expertise in mathematics, computer science, and user experience design. Together, we've created what we believe is the most complete online scientific calculator available today.</p>
+
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li><strong>Accuracy:</strong> We prioritize mathematical precision in all calculations</li>
+                        <li><strong>Accessibility:</strong> Our calculator is free to use and works on any device</li>
+                        <li><strong>Innovation:</strong> We continuously improve and expand our features</li>
+                        <li><strong>Education:</strong> We aim to make complex mathematics more approachable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Page -->
+        <div id="calculator-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Scientific Calculator</h1>
+                    <p>Use our advanced calculator for all your mathematical needs</p>
+                </div>
+
+                <div class="calculator-container">
+                    <div class="calculator-wrapper">
+                        <div class="calculator">
+                            <div class="display" id="display">0</div>
+                            <div class="buttons">
+                                <!-- Calculator buttons -->
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sin(&#39;)">sin</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sinh(&#39;)">sinh</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.cos(&#39;)">cos</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cosh(&#39;)">cosh</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.tan(&#39;)">tan</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.tanh(&#39;)">tanh</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log(&#39;)">ln</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.log2(&#39;)">log₂</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log10(&#39;)">log</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;1/&#39;)">1/x</button>
+
+                                <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.asin(&#39;)">sin⁻¹</button>
+                                <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.asinh(&#39;)">asinh</button>
+                                <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.acos(&#39;)">cos⁻¹</button>
+                                <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.acosh(&#39;)">acosh</button>
+                                <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.atan(&#39;)">tan⁻¹</button>
+                                <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.atanh(&#39;)">atanh</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sqrt(&#39;)">√</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cbrt(&#39;)">∛</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.pow(&#39;)">x^y</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.pow(10,&#39;)">10^x</button>
+
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.PI&#39;)">π</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.random()&#39;)">rand</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.E&#39;)">e</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.exp(&#39;)">e^x</button>
+                                <button class="function" onclick="addToDisplay(&#39;(&#39;)">(</button>
+                                <button class="function" onclick="addToDisplay(&#39;)&#39;)">)</button>
+                                <button class="clear" onclick="clearDisplay()">C</button>
+                                <button class="function shifted" onclick="toggleShift()">2nd</button>
+                                <button class="function" onclick="backspace()">⌫</button>
+
+                                <button class="memory" onclick="memoryRecall()">MR</button>
+                                <button class="memory" onclick="memoryClear()">MC</button>
+                                <button class="memory" onclick="memoryAdd()">M+</button>
+                                <button class="memory" onclick="memorySubtract()">M-</button>
+                                <button class="operator" onclick="addToDisplay(&#39;%&#39;)">%</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;factorial(&#39;)">n!</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;degreesToRadians(&#39;)">deg→rad</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;**2&#39;)">x²</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;**3&#39;)">x³</button>
+
+                                <button class="number" onclick="addToDisplay(&#39;7&#39;)">7</button>
+                                <button class="number" onclick="addToDisplay(&#39;8&#39;)">8</button>
+                                <button class="number" onclick="addToDisplay(&#39;9&#39;)">9</button>
+                                <button class="operator" onclick="addToDisplay(&#39;/&#39;)">/</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.abs(&#39;)">abs</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.floor(&#39;)">floor</button>
+
+                                <button class="number" onclick="addToDisplay(&#39;4&#39;)">4</button>
+                                <button class="number" onclick="addToDisplay(&#39;5&#39;)">5</button>
+                                <button class="number" onclick="addToDisplay(&#39;6&#39;)">6</button>
+                                <button class="operator" onclick="addToDisplay(&#39;*&#39;)">×</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.ceil(&#39;)">ceil</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.round(&#39;)">round</button>
+
+                                <button class="number" onclick="addToDisplay(&#39;1&#39;)">1</button>
+                                <button class="number" onclick="addToDisplay(&#39;2&#39;)">2</button>
+                                <button class="number" onclick="addToDisplay(&#39;3&#39;)">3</button>
+                                <button class="operator" onclick="addToDisplay(&#39;-&#39;)">-</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;**&#39;)">^</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sign(&#39;)">sign</button>
+
+                                <button class="number" onclick="addToDisplay(&#39;0&#39;)">0</button>
+                                <button class="number" onclick="addToDisplay(&#39;.&#39;)">.</button>
+                                <button class="equals" onclick="calculate()">=</button>
+                                <button class="operator" onclick="addToDisplay(&#39;+&#39;)">+</button>
+                                <button class="function primary-fn" onclick="addToDisplay(&#39;Math.trunc(&#39;)">trunc</button>
+                                <button class="function secondary-fn" onclick="addToDisplay(&#39;radiansToDegrees(&#39;)">rad→deg</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Us Page -->
+        <div id="contact-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Contact Us</h1>
+                    <p>We'd love to hear from you! Send us a message using the form below.</p>
+                </div>
+
+                <div class="content-section">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Other Ways to Reach Us</h2>
+                    <p><strong>Email:</strong> support@scicalcpro.com</p>
+                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Address:</strong> 123 Math Street, Equation City, EC 12345</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sitemap Page -->
+        <div id="sitemap-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Website Sitemap</h1>
+                    <p>Navigate our website easily using the links below</p>
+                </div>
+
+                <div class="content-section">
+                    <div class="sitemap-list">
+                        <ul>
+                            <li>
+                                <h3>Main Pages</h3>
+                            </li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="calculator.html">Calculator</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <h3>Legal Pages</h3>
+                            </li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <h3>Resources</h3>
+                            </li>
+                            <li><a href="tutorials.html">Calculator Tutorials</a></li>
+                            <li><a href="examples.html">Calculation Examples</a></li>
+                            <li><a href="file:///D:/HOW%20TO%20EARN%20MONEY%20DAILY/IMPORTANT%20HOW%20CREATE%20CALCULATOR%20PAGE/DEEPSEK%20TEMPLATE/faq.html">Frequently Asked Questions</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <h3>Company</h3>
+                            </li>
+                            <li><a href="file:///D:/HOW%20TO%20EARN%20MONEY%20DAILY/IMPORTANT%20HOW%20CREATE%20CALCULATOR%20PAGE/DEEPSEK%20TEMPLATE/team.html">Our Team</a></li>
+                            <li><a href="file:///D:/HOW%20TO%20EARN%20MONEY%20DAILY/IMPORTANT%20HOW%20CREATE%20CALCULATOR%20PAGE/DEEPSEK%20TEMPLATE/careers.html">Careers</a></li>
+                            <li><a href="file:///D:/HOW%20TO%20EARN%20MONEY%20DAILY/IMPORTANT%20HOW%20CREATE%20CALCULATOR%20PAGE/DEEPSEK%20TEMPLATE/press.html">Press Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms of Use Page -->
+        <div id="terms-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Terms of Use</h1>
+                    <p>Last Updated: January 1, 2023</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing and using SciCalc Pro ("the Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use the Service.</p>
+
+                    <h2>2. Description of Service</h2>
+                    <p>SciCalc Pro provides users with access to an advanced scientific calculator through a web browser. The Service is provided free of charge for personal and educational use.</p>
+
+                    <h2>3. User Responsibilities</h2>
+                    <p>Users agree to use the Service only for lawful purposes. You agree not to use the Service:</p>
+                    <ul>
+                        <li>In any way that violates any applicable law or regulation</li>
+                        <li>To exploit, harm, or attempt to exploit or harm minors</li>
+                        <li>To transmit any malicious software or code</li>
+                    </ul>
+
+                    <h2>4. Intellectual Property</h2>
+                    <p>All content included on the Service, such as text, graphics, logos, and the calculator interface, is the property of SciCalc Pro and protected by copyright laws.</p>
+
+                    <h2>5. Disclaimer of Warranties</h2>
+                    <p>The Service is provided "as is" without warranty of any kind. SciCalc Pro does not guarantee that the Service will be uninterrupted or error-free, or that the results obtained from use of the Service will be accurate or reliable.</p>
+
+                    <h2>6. Limitation of Liability</h2>
+                    <p>In no event shall SciCalc Pro be liable for any damages resulting from use or inability to use the Service, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+
+                    <h2>7. Changes to Terms</h2>
+                    <p>We reserve the right to modify these terms at any time. Your continued use of the Service following any changes constitutes your acceptance of the new terms.</p>
+
+                    <h2>8. Governing Law</h2>
+                    <p>These terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Page -->
+        <div id="privacy-page" style="display: none;">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Privacy Policy</h1>
+                    <p>Last Updated: January 1, 2023</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>1. Information We Collect</h2>
+                    <p>SciCalc Pro is committed to protecting your privacy. Our calculator operates entirely in your browser, and we do not collect:</p>
+                    <ul>
+                        <li>Personal identification information</li>
+                        <li>Calculation history or results</li>
+                        <li>IP addresses or device identifiers</li>
+                    </ul>
+
+                    <h2>2. Cookies and Tracking</h2>
+                    <p>We do not use cookies or any tracking technologies on our calculator page. If you visit other pages on our website, we may use essential cookies for basic functionality.</p>
+
+                    <h2>3. Third-Party Services</h2>
+                    <p>We do not share any information with third-party services as our calculator does not collect any user data.</p>
+
+                    <h2>4. Children's Privacy</h2>
+                    <p>Our Service is suitable for all ages as it does not collect any personal information. Children may use our calculator without any privacy concerns.</p>
+
+                    <h2>5. Data Security</h2>
+                    <p>Since we do not collect or store any user data, there is no risk of data breaches or unauthorized access to personal information through our calculator service.</p>
+
+                    <h2>6. Changes to This Policy</h2>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+                    <h2>7. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact us at privacy@scicalcpro.com.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-calculator"></i> SciCalc Pro
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://www.1234calculator.com/">Home</a>
+                    <a href="https://www.1234calculator.com/about.html">About</a>
+                    <a href="https://www.1234calculator.com/calculator.html">Calculator</a>
+                    <a href="https://www.1234calculator.com/contact.html">Contact</a>
+                    <a href="https://www.1234calculator.com/sitemap.html">Sitemap</a>
+                    <a href="https://www.1234calculator.com/terms.html">Terms</a>
+                    <a href="https://www.1234calculator.com/privacy.html">Privacy</a>
+                </div>
+
+                <div class="social-links">
+                    <a href=".html#"><i class="fab fa-facebook"></i></a>
+                    <a href=".html#"><i class="fab fa-twitter"></i></a>
+                    <a href=".html#"><i class="fab fa-instagram"></i></a>
+                    <a href=".html#"><i class="fab fa-github"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple router to show the correct page based on URL
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('main > div').forEach(page => {
+                page.style.display = 'none';
+            });
+            // Show requested page
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.style.display = 'block';
+            } else {
+                document.getElementById('home-page').style.display = 'block';
+            }
+        }
+        // Determine which page to show based on URL
+        function route() {
+            const path = window.location.pathname.split('/').pop();
+            let pageId = 'home-page';
+            if (path === 'about.html') pageId = 'about-page';
+            else if (path === 'calculator.html') pageId = 'calculator-page';
+            else if (path === 'contact.html') pageId = 'contact-page';
+            else if (path === 'sitemap.html') pageId = 'sitemap-page';
+            else if (path === 'terms.html') pageId = 'terms-page';
+            else if (path === 'privacy.html') pageId = 'privacy-page';
+            showPage(pageId);
+        }
+        // Initialize routing
+        window.addEventListener('load', route);
+        window.addEventListener('popstate', route);
+        // Calculator functionality
+        let memory = 0;
+        let display = document.getElementById('display');
+        let shiftMode = false;
+
+        function addToDisplay(value) {
+            if (display.innerText === '0' && value !== '.' && !value.includes('Math.')) {
+                display.innerText = value;
+            } else {
+                display.innerText += value;
+            }
+        }
+
+        function clearDisplay() {
+            display.innerText = '0';
+        }
+
+        function backspace() {
+            if (display.innerText.length === 1 || display.innerText === 'Error') {
+                display.innerText = '0';
+            } else {
+                display.innerText = display.innerText.slice(0, -1);
+            }
+        }
+
+        function calculate() {
+            try {
+                // Replace special functions and symbols before evaluation
+                let expression = display.innerText
+                    .replace(/\^/g, '**')
+                    .replace(/x\^y/g, 'Math.pow')
+                    .replace(/x²/g, '**2')
+                    .replace(/x³/g, '**3');
+                // Evaluate the expression
+                let result = eval(expression);
+                // Handle very large or small numbers with scientific notation
+                if (Math.abs(result) > 1e12 || (Math.abs(result) < 1e-6 && result !== 0)) {
+                    display.innerText = result.toExponential(8);
+                } else {
+                    // Round to 10 decimal places to avoid floating point precision issues
+                    display.innerText = parseFloat(result.toFixed(10)).toString();
+                }
+            } catch (error) {
+                display.innerText = 'Error';
+            }
+        }
+        // Factorial function
+        function factorial(n) {
+            if (n < 0) return NaN;
+            if (n === 0 || n === 1) return 1;
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        // Conversion functions
+        function degreesToRadians(degrees) {
+            return degrees * Math.PI / 180;
+        }
+
+        function radiansToDegrees(radians) {
+            return radians * 180 / Math.PI;
+        }
+        // Memory functions
+        function memoryRecall() {
+            display.innerText = memory.toString();
+        }
+
+        function memoryClear() {
+            memory = 0;
+        }
+
+        function memoryAdd() {
+            try {
+                memory += parseFloat(eval(display.innerText));
+            } catch (error) {
+                display.innerText = 'Error';
+            }
+        }
+
+        function memorySubtract() {
+            try {
+                memory -= parseFloat(eval(display.innerText));
+            } catch (error) {
+                display.innerText = 'Error';
+            }
+        }
+        // Shift mode for secondary functions
+        function toggleShift() {
+            shiftMode = !shiftMode;
+            document.querySelector('.calculator').classList.toggle('shift-mode');
+            document.querySelector('.shifted').style.backgroundColor = shiftMode ? '#ff9500' : '#404040';
+        }
+        // Contact form submission
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+ <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SciCalc Pro",
+      "url": "https://scicalcpro.com",
+      "description": "Advanced online scientific calculator with comprehensive mathematical functions",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+     <script type='text/javascript'>
+//<![CDATA[
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+        (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+    }
+});
+//]]>
+</script>
+</body>
+
+</html>
