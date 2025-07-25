@@ -815,14 +815,147 @@
 	    <p>You find them everywhere: schools, labs, offices where people actually need to know what they’re doing. And with all the online learning happening, people are just downloading calculator apps instead—no need to jam one more thing in your backpack. Bottom line? If you’re doing real math or science, you basically need a scientific calculator. It’s the unsung hero of anyone who’s ever stared down a gnarly equation and lived to tell the tale.</p>	
                 </div>
 
-        
-    </main>
+<div class="calculator-container">
+                        <div class="calculator-wrapper">
+                            <div class="calculator">
+                                <div class="display" id="display">0</div>
+                                <div class="buttons">
+                                    <!-- Calculator buttons -->
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sin(&#39;)">sin</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sinh(&#39;)">sinh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.cos(&#39;)">cos</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cosh(&#39;)">cosh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.tan(&#39;)">tan</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.tanh(&#39;)">tanh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log(&#39;)">ln</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.log2(&#39;)">log₂</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.log10(&#39;)">log</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;1/&#39;)">1/x</button>
+
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.asin(&#39;)">sin⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.asinh(&#39;)">asinh</button>
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.acos(&#39;)">cos⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.acosh(&#39;)">acosh</button>
+                                    <button class="function small-text primary-fn" onclick="addToDisplay(&#39;Math.atan(&#39;)">tan⁻¹</button>
+                                    <button class="function small-text secondary-fn" onclick="addToDisplay(&#39;Math.atanh(&#39;)">atanh</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.sqrt(&#39;)">√</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.cbrt(&#39;)">∛</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.pow(&#39;)">x^y</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.pow(10,&#39;)">10^x</button>
+
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.PI&#39;)">π</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.random()&#39;)">rand</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.E&#39;)">e</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.exp(&#39;)">e^x</button>
+                                    <button class="function" onclick="addToDisplay(&#39;(&#39;)">(</button>
+                                    <button class="function" onclick="addToDisplay(&#39;)&#39;)">)</button>
+                                    <button class="clear" onclick="clearDisplay()">C</button>
+                                    <button class="function shifted" onclick="toggleShift()">2nd</button>
+                                    <button class="function" onclick="backspace()">⌫</button>
+
+                                    <button class="memory" onclick="memoryRecall()">MR</button>
+                                    <button class="memory" onclick="memoryClear()">MC</button>
+                                    <button class="memory" onclick="memoryAdd()">M+</button>
+                                    <button class="memory" onclick="memorySubtract()">M-</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;%&#39;)">%</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;factorial(&#39;)">n!</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;degreesToRadians(&#39;)">deg→rad</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;**2&#39;)">x²</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;**3&#39;)">x³</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;7&#39;)">7</button>
+                                    <button class="number" onclick="addToDisplay(&#39;8&#39;)">8</button>
+                                    <button class="number" onclick="addToDisplay(&#39;9&#39;)">9</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;/&#39;)">/</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.abs(&#39;)">abs</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.floor(&#39;)">floor</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;4&#39;)">4</button>
+                                    <button class="number" onclick="addToDisplay(&#39;5&#39;)">5</button>
+                                    <button class="number" onclick="addToDisplay(&#39;6&#39;)">6</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;*&#39;)">×</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.ceil(&#39;)">ceil</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.round(&#39;)">round</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;1&#39;)">1</button>
+                                    <button class="number" onclick="addToDisplay(&#39;2&#39;)">2</button>
+                                    <button class="number" onclick="addToDisplay(&#39;3&#39;)">3</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;-&#39;)">-</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;**&#39;)">^</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;Math.sign(&#39;)">sign</button>
+
+                                    <button class="number" onclick="addToDisplay(&#39;0&#39;)">0</button>
+                                    <button class="number" onclick="addToDisplay(&#39;.&#39;)">.</button>
+                                    <button class="equals" onclick="calculate()">=</button>
+                                    <button class="operator" onclick="addToDisplay(&#39;+&#39;)">+</button>
+                                    <button class="function primary-fn" onclick="addToDisplay(&#39;Math.trunc(&#39;)">trunc</button>
+                                    <button class="function secondary-fn" onclick="addToDisplay(&#39;radiansToDegrees(&#39;)">rad→deg</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Algebra Calculator</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <h3>Advanced Math Functions</h3>
+                            <p>Includes trigonometric, logarithmic, exponential, and statistical functions for complex calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <h3>Memory Functions</h3>
+                            <p>Store and recall values with memory functions (MR, MC, M+, M-) for multi-step calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>Unit Conversions</h3>
+                            <p>Convert between degrees and radians with a single click for trigonometry calculations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>Secondary Functions</h3>
+                            <p>Access additional functions using the 2nd key, doubling the available operations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Responsive Design</h3>
+                            <p>Works perfectly on all devices from desktop computers to mobile phones.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Instant Results</h3>
+                            <p>Get accurate results instantly with our powerful calculation engine.</p>
+                        </div>
+						
+					</div>
+                </div>
+            </section>
+        </div>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-calculator"></i> SciCalc Pro
+                    <i class="fas fa-calculator"></i> 1234 Calculator
                 </div>
 
                 <div class="footer-links">
@@ -841,7 +974,7 @@
                     <a href=".html#"><i class="fab fa-instagram"></i></a>
                     <a href=".html#"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="copyright">© 2025 SciCalc Pro. All rights reserved.</p>
+                <p class="copyright">© 2025 1234 Calculator. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -976,7 +1109,7 @@
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
-   </script>
+    </script>
  <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -1012,5 +1145,3 @@ document.addEventListener('keydown', function(e) {
 //]]>
 </script>
 </body>
-
-</html>
